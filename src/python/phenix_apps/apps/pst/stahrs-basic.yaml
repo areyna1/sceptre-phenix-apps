@@ -1,0 +1,1306 @@
+apiVersion: phenix.sandia.gov/v2
+kind: Scenario
+metadata:
+  name: stahrs
+  created: "12/05/2023"
+  annotations:
+    topology: stahrs
+spec:
+  apps:
+    - name: mgmt_tap
+    - name: carnac_internet
+      hosts:
+      - hostname: matlab-provider
+        metadata:
+          interface: eth0
+    - name: sceptre
+      assetDir: /phenix/topologies/stahrs
+      hosts:
+      - hostname: matlab-provider
+        metadata:
+          publish_endpoint: udp://*;239.0.0.1:40000
+          simulator: Matlab
+          type: provider
+      - hostname: ras-1
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras1
+          type: ras
+        server_hostname: ldsub1
+        logic: ras1.voltage_mag_avg = ldsub1.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-2
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras2
+          type: ras
+        server_hostname: ldsub2
+        logic: ras2.voltage_mag_avg = ldsub2.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-3
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras3
+          type: ras
+        server_hostname: ldsub3
+        logic: ras3.voltage_mag_avg = ldsub3.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-4
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras4
+          type: ras
+        server_hostname: ldsub4
+        logic: ras4.voltage_mag_avg = ldsub4.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-5
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras5
+          type: ras
+        server_hostname: ldsub5
+        logic: ras5.voltage_mag_avg = ldsub5.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-6
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras6
+          type: ras
+        server_hostname: ldsub6
+        logic: ras6.voltage_mag_avg = ldsub6.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-7
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras7
+          type: ras
+        server_hostname: ldsub7
+        logic: ras7.voltage_mag_avg = ldsub7.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-8
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras8
+          type: ras
+        server_hostname: ldsub8
+        logic: ras8.voltage_mag_avg = ldsub8.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-9
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras9
+          type: ras
+        server_hostname: ldsub9
+        logic: ras9.voltage_mag_avg = ldsub9.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-10
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras10
+          type: ras
+        server_hostname: ldsub10
+        logic: ras10.voltage_mag_avg = ldsub10.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-11
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras11
+          type: ras
+        server_hostname: ldsub11
+        logic: ras11.voltage_mag_avg = ldsub11.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-12
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras12
+          type: ras
+        server_hostname: ldsub12
+        logic: ras12.voltage_mag_avg = ldsub12.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-13
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras13
+          type: ras
+        server_hostname: ldsub13
+        logic: ras13.voltage_mag_avg = ldsub13.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-14
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras14
+          type: ras
+        server_hostname: ldsub14
+        logic: ras14.voltage_mag_avg = ldsub14.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-15
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras15
+          type: ras
+        server_hostname: ldsub15
+        logic: ras15.voltage_mag_avg = ldsub15.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-16
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras16
+          type: ras
+        server_hostname: ldsub16
+        logic: ras16.voltage_mag_avg = ldsub16.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-17
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras17
+          type: ras
+        server_hostname: ldsub17
+        logic: ras17.voltage_mag_avg = ldsub17.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-18
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras18
+          type: ras
+        server_hostname: ldsub18
+        logic: ras18.voltage_mag_avg = ldsub18.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+        - hostname: ras-19
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras19
+          type: ras
+        server_hostname: ldsub19
+        logic: ras19.voltage_mag_avg = ldsub19.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-20
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras20
+          type: ras
+        server_hostname: ldsub20
+        logic: ras20.voltage_mag_avg = ldsub20.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-21
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras21
+          type: ras
+        server_hostname: ldsub21
+        logic: ras21.voltage_mag_avg = ldsub21.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-22
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras22
+          type: ras
+        server_hostname: ldsub22
+        logic: ras22.voltage_mag_avg = ldsub22.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-23
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras23
+          type: ras
+        server_hostname: ldsub23
+        logic: ras23.voltage_mag_avg = ldsub23.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-24
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras24
+          type: ras
+        server_hostname: ldsub24
+        logic: ras24.voltage_mag_avg = ldsub24.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: gensub1
+        metadata:
+            dnp3:
+            - name: gensub1
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub2
+        metadata:
+            dnp3:
+            - name: gensub2
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub3
+        metadata:
+            dnp3:
+            - name: gensub3
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub4
+        metadata:
+            dnp3:
+            - name: gensub4
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub5
+        metadata:
+            dnp3:
+            - name: gensub5
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub6
+        metadata:
+            dnp3:
+            - name: gensub6
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub7
+        metadata:
+            dnp3:
+            - name: gensub7
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub8
+        metadata:
+            dnp3:
+            - name: gensub8
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub9
+        metadata:
+            dnp3:
+            - name: gensub9
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub10
+        metadata:
+            dnp3:
+            - name: gensub10
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub11
+        metadata:
+            dnp3:
+            - name: gensub11
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub12
+        metadata:
+            dnp3:
+            - name: gensub12
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub13
+        metadata:
+            dnp3:
+            - name: gensub13
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub14
+        metadata:
+            dnp3:
+            - name: gensub14
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub15
+        metadata:
+            dnp3:
+            - name: gensub15
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub16-1
+        metadata:
+            dnp3:
+            - name: gensub16-1
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub16-2
+        metadata:
+            dnp3:
+            - name: gensub16-2
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub18
+        metadata:
+            dnp3:
+            - name: gensub18
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub19
+        metadata:
+            dnp3:
+            - name: gensub19
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub20
+        metadata:
+            dnp3:
+            - name: gensub20
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub21
+        metadata:
+            dnp3:
+            - name: gensub21
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub22
+        metadata:
+            dnp3:
+            - name: gensub22
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub23
+        metadata:
+            dnp3:
+            - name: gensub23
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub24
+        metadata:
+            dnp3:
+            - name: gensub24
+              type: pmu
+            infrastructure: wac
+      - hostname: ldsub1
+        metadata:
+            dnp3:
+            - name: ldsub1
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub2
+        metadata:
+            dnp3:
+            - name: ldsub2
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub3
+        metadata:
+            dnp3:
+            - name: ldsub3
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub4
+        metadata:
+            dnp3:
+            - name: ldsub4
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub5
+        metadata:
+            dnp3:
+            - name: ldsub5
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub6
+        metadata:
+            dnp3:
+            - name: ldsub6
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub7
+        metadata:
+            dnp3:
+            - name: ldsub7
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub8
+        metadata:
+            dnp3:
+            - name: ldsub8
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub9
+        metadata:
+            dnp3:
+            - name: ldsub9
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub10
+        metadata:
+            dnp3:
+            - name: ldsub10
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub11
+        metadata:
+            dnp3:
+            - name: ldsub11
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub12
+        metadata:
+            dnp3:
+            - name: ldsub12
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub13
+        metadata:
+            dnp3:
+            - name: ldsub13
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub14
+        metadata:
+            dnp3:
+            - name: ldsub14
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub15
+        metadata:
+            dnp3:
+            - name: ldsub15
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub16
+        metadata:
+            dnp3:
+            - name: ldsub16
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub17
+        metadata:
+            dnp3:
+            - name: ldsub17
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub18
+        metadata:
+            dnp3:
+            - name: ldsub18
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub19
+        metadata:
+            dnp3:
+            - name: ldsub19
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub20
+        metadata:
+            dnp3:
+            - name: ldsub20
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub21
+        metadata:
+            dnp3:
+            - name: ldsub21
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub22
+        metadata:
+            dnp3:
+            - name: ldsub22
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub23
+        metadata:
+            dnp3:
+            - name: ldsub23
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub24
+        metadata:
+            dnp3:
+            - name: ldsub24
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+    - name: pst
+      hosts:
+      - hostname: matlab-provider
+        metadata:
+          labels:
+          - elk
+          publish_rate: 0.001
+          publish_endpoint: udp://*;239.0.0.1:40000
+          publish_points: /phenix/topologies/stahrs/injects/publishPoints.txt
+          solver: /phenix/topologies/stahrs/injects/d_minniWECC_V3C_C3_6_C_PowerPlant_IID1.m
+          simulator: Matlab
+          type: provider
+
+
