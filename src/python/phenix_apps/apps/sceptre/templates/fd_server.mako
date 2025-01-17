@@ -8,6 +8,7 @@
 % else:
         <cycle-time>1000</cycle-time>
 % endif
+
         <tags>
 <%
 def intercambio(dictionary, string):
