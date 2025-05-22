@@ -3,27 +3,22 @@ import phenix_apps.apps.sceptre.configs.infrastructures as infra
 
 
 def get_fdconfig_class(infrastructure: str) -> type:
-    # no reason for this to be case-sensitive
-    infrastructure = infrastructure.lower().strip()
-
     if infrastructure == 'power-transmission':
         base_class = infra.PowerTransmissionInfrastructure
-    elif infrastructure == 'power-distribution':
-        base_class = infra.PowerDistributionInfrastructure
     elif infrastructure == 'batch-process':
         base_class = infra.BatchProcessInfrastructure
+    elif infrastructure == 'power-distribution':
+        base_class = infra.PowerDistributionInfrastructure
     elif infrastructure == 'hvac':
         base_class = infra.HVACInfrastructure
     elif infrastructure == 'fuel':
         base_class = infra.FuelInfrastructure
     elif infrastructure == 'rtds':
         base_class = infra.RTDSInfrastructure
-    elif infrastructure == 'opalrt':
-        base_class = infra.OPALRTInfrastructure
     elif infrastructure == 'waterway':
         base_class = infra.WaterwayInfrastructure
-    elif infrastructure == 'battery':
-        base_class = infra.BatteryInfrastructure
+    elif infrastructure == 'wac':
+        base_class = infra.WideAreaControl
     else:
         raise error.AppError(f"Infrastructure: {infrastructure} not supported")
 
