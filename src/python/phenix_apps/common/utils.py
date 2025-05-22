@@ -7,13 +7,14 @@ import os.path
 import random
 import re
 import shutil
+import stat
 import tempfile
 import time
 import sys
 import subprocess
 from io import StringIO
 from pathlib import Path
-from typing import Union, Optional, List
+from typing import Union, Optional, List, IO
 from socket import inet_ntoa
 from struct import pack
 
@@ -55,22 +56,33 @@ def mako_render(script_path: str, **kwargs):
     return template.render(**kwargs)
 
 
-def mako_serve_template(template_name: str, templates_dir: str, filename: str, **kwargs) -> None:
+def mako_serve_template(
+    template_name: str, templates_dir: str, filename: IO, **kwargs
+) -> None:
     """Serve Mako template.
 
     This function is based on Mako-style functionality of searching for the template in
     in the template directory and rendering it.
 
     Args:
-        template_name (str): name of the template.
-        filename (str): name of the file.
-        kwargs: Arbitrary keyword arguments.
+        template_name: name of the template
+        filename: open file handle to write to (NOT the name of the file)
+        kwargs: Arbitrary keyword arguments to pass to the template
     """
 
     mylookup   = mako.lookup.TemplateLookup(directories=[templates_dir])
     mytemplate = mylookup.get_template(template_name)
 
+    # print is a workaround for different encodings, I think
     print(mytemplate.render(**kwargs), file=filename)
+
+
+def mark_executable(file_path: str):
+    """
+    Add executable by owner bit to file mode.
+    """
+    st_ = os.stat(file_path)
+    os.chmod(file_path, st_.st_mode | stat.S_IEXEC)
 
 
 def generate_mac_addr() -> str:
@@ -242,7 +254,7 @@ def mm_send(mm: minimega.minimega, vm: str, src: str, dst: str) -> None:
                 os.makedirs(dst_dir)
 
             if os.path.isdir(src):
-                shutil.copytree(src, vm_dst)
+                shutil.copytree(src, vm_dst, dirs_exist_ok=True)
             else:
                 shutil.copyfile(src, vm_dst)
         finally:
@@ -384,7 +396,7 @@ def mm_exec_wait(
         if not row['Response']:
             continue
 
-        resp  = row['Response']
+        resp = row['Response']
 
         if uuid not in resp:
             eprint(f"UUID '{uuid}' not in response: {repr(resp)}")
