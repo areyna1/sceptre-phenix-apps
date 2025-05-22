@@ -1,0 +1,13 @@
+name: scorch
+  metadata:
+    components: 
+    - name: sleepysheepy
+      type: sleepysheepy
+      metadata:
+        sleep_time: 600
+        run_ids: ["1.0"]
+        log_path: "/path/to/timelogs/"
+  runs:
+    - configure: ["sleepysheepy"]
+      start: ["sleepysheepy"]
+      cleanup: ["sleepysheepy"]

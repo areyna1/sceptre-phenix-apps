@@ -1,0 +1,13 @@
+name: scorch
+  metadata:
+    components: 
+    - name: dataconfigbuilder
+      type: dataconfigbuilder
+      metadata:
+        topo_path: "/phenix/topologies/firebird"
+        publish_endpoints: 
+          "udp://239.0.0.1:40000":
+          - provider
+  runs:
+    - configure: ["dataconfigbuilder"]
+      cleanup: ["dataconfigbuilder"]

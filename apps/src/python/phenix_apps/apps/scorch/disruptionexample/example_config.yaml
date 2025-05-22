@@ -1,0 +1,13 @@
+name: scorch
+metadata:
+  components:
+  - name: disruptionexample
+    type: disruptionexample
+    metadata:
+      sleep_duration: 300
+      nodes: 'rtu-1'
+  runs:
+    - start:
+        - disruptionexample
+      stop:
+        - disruptionexample

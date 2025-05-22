@@ -1,0 +1,140 @@
+apiVersion: phenix.sandia.gov/v2
+kind: Scenario
+metadata:
+  name: stahrs_basic
+  created: "12/05/2023"
+  annotations:
+    topology: stahrs
+spec:
+  apps:
+    - name: mgmt_tap
+    - name: carnac_internet
+      hosts:
+      - hostname: matlab-provider
+        metadata:
+          interface: eth0
+    - name: sceptre
+      assetDir: /phenix/topologies/stahrs
+      hosts:
+      - hostname: ras-1
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras1
+          type: ras
+        server_hostname: ldsub1
+        logic: ras1.voltage_mag_avg = ldsub1.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: ras-2
+        metadata:
+          connected_rtus:
+            - ldsub1
+            - ldsub2
+            - ldsub3
+            - ldsub4
+            - ldsub5
+            - ldsub6
+            - ldsub7
+            - ldsub8
+            - ldsub9
+            - ldsub10
+            - ldsub11
+            - ldsub12
+            - ldsub13
+            - ldsub14
+            - ldsub15
+            - ldsub16
+            - ldsub17
+            - ldsub18
+            - ldsub19
+            - ldsub20
+            - ldsub21
+            - ldsub22
+            - ldsub23
+            - ldsub24
+        dnp3:
+        - name: ras2
+          type: ras
+        server_hostname: ldsub2
+        logic: ras2.voltage_mag_avg = ldsub2.voltage_mag
+        infrastructure: wac
+        provider: matlab-provider
+        type: fep
+      - hostname: gensub1
+        metadata:
+            dnp3:
+            - name: gensub1
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: gensub2
+        metadata:
+            dnp3:
+            - name: gensub2
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+
+      - hostname: ldsub1
+        metadata:
+            dnp3:
+            - name: ldsub1
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+      - hostname: ldsub2
+        metadata:
+            dnp3:
+            - name: ldsub2
+              type: pmu
+            infrastructure: wac
+            labels: elk
+            provider: matlab-provider
+            type: fd-server
+
+    - name: pst
+      hosts:
+      - hostname: matlab-provider
+        metadata:
+          labels:
+          - elk
+          publish_rate: 0.001
+          publish_endpoint: udp://*;239.0.0.1:40000
+          publish_points: /phenix/topologies/stahrs/injects/publishPoints.txt
+          solver: /phenix/topologies/stahrs/injects/d_minniWECC_V3C_C3_6_C_PowerPlant_IID1.m
+          simulator: Matlab
+          type: provider
+
+

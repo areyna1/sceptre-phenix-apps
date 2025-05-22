@@ -1,0 +1,1 @@
+{"datastreams": [{"name": "Tank2.tank_volume", "group": "physical_process", "subgroup": "volume", "device": "Tank2volume"}, {"name": "allpacks", "group": "network", "subgroup": "allpackets", "device": "ds-packs-all"}, {"name": "10.1.30.101", "group": "host", "subgroup": "up/down", "device": "updown-shipcontroller"}]}

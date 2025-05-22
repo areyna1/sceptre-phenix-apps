@@ -1,0 +1,12 @@
+name: scorch
+metadata:
+  components:
+  - name: providerlogs
+    type: providerlogs
+    metadata:
+      topo_path: ""
+      run_ids: []
+  runs:
+    - stop:
+        - providerlogs
+

@@ -1,0 +1,10 @@
+*matlab send time for pmu1.timestamp value 0.3875 - Aug  9, 2024 17:54:30.652889000 UTC
+*sceptre pmu1 send time for pmu1.timestamp value 0.3875 - Aug  9, 2024 17:54:30.652894000 UTC
+
+*matlab send time for pmu1.timestamp value 0.3833 -Aug  9, 2024 17:54:30.443401000 UTC
+*sceptre pmu1 UDP received time for pmu1.timestamp value 0.3833 -Aug  9, 2024 17:54:30.443404000 UTC
+
+*pmu1 DNP3 read request time for pmu1.timestamp value 0.3833 -Aug  9, 2024 17:54:31.419055000 UTC
+*pmu1 DNP3 send time for pmu1.timestamp value 0.3833 -Aug  9, 2024 17:54:31.419499000 UTC
+
+*ras1 DNP3 receive time for pmu1.timestamp value 0.3833 -Aug  9, 2024 17:54:31.419509000 UTC

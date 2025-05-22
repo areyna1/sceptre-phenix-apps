@@ -1,0 +1,2 @@
+pmu1.voltage_mag
+pmu2.voltage_mag

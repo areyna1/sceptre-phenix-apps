@@ -1,0 +1,11 @@
+name: scorch
+  metadata:
+    components:
+    - name: retrievedata
+      type: retrievedata
+      metadata:
+        topo_path: "/phenix/topologies/firebird"
+        run_ids: ["1.0"]
+  runs:
+    - start: ["retrievedata"]
+      stop: ["retrievedata"]
